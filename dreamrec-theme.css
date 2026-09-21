@@ -1,0 +1,69 @@
+:root {
+  --dreamrec-navy: #061a2a;
+  --dreamrec-navy-2: #0a2940;
+  --dreamrec-teal: #0b7180;
+  --dreamrec-teal-bright: #16b7b0;
+  --dreamrec-aqua: #67eee0;
+  --dreamrec-text: #e6fbf8;
+  --dreamrec-muted: #9bc8ca;
+}
+
+html, body {
+  background: var(--dreamrec-navy) !important;
+  color: var(--dreamrec-text) !important;
+}
+
+body {
+  background-image: linear-gradient(145deg, rgba(22,183,176,.08), transparent 42%),
+    linear-gradient(330deg, rgba(10,41,64,.9), rgba(6,26,42,.98)) !important;
+}
+
+header, .MuiAppBar-root, .MuiPaper-root {
+  background-color: var(--dreamrec-navy-2) !important;
+  color: var(--dreamrec-text) !important;
+}
+
+.MuiPaper-root, .MuiCard-root, .MuiCardContent-root {
+  border-color: rgba(103,238,224,.28) !important;
+}
+
+.MuiButton-containedPrimary, .MuiButton-contained, .MuiButton-colorPrimary {
+  background-color: var(--dreamrec-teal) !important;
+  color: #fff !important;
+}
+
+.MuiButton-outlinedPrimary, .MuiButton-outlined {
+  border-color: var(--dreamrec-teal-bright) !important;
+  color: var(--dreamrec-aqua) !important;
+}
+
+.MuiTypography-root, .MuiLink-root, a {
+  color: inherit;
+}
+
+.MuiLink-root, a:hover {
+  color: var(--dreamrec-aqua) !important;
+}
+
+.MuiDivider-root, hr {
+  border-color: rgba(103,238,224,.25) !important;
+}
+
+.MuiSkeleton-root {
+  background-color: rgba(22,183,176,.16) !important;
+}
+
+::selection {
+  background: var(--dreamrec-teal-bright);
+  color: var(--dreamrec-navy);
+}
+
+.dreamrec-profile-index {
+  min-height: 100vh;
+  background: var(--dreamrec-navy);
+  color: var(--dreamrec-text);
+}
+
+a.dreamrec-profile-link {
+  color: var(--dreamrec-aqua) !important;
+}
