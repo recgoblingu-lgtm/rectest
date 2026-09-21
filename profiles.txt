@@ -2,3 +2,4 @@
 # Only URLs from the permitted source domain are accepted.
 # Example:
 # https://recroom.network/user/Example/
+https://recroom.network/user/Fukuroman
