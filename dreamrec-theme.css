@@ -58,6 +58,32 @@ header, .MuiAppBar-root, .MuiPaper-root {
   color: var(--dreamrec-navy);
 }
 
+.dreamrec-brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: .75rem 0;
+  font: 700 1.05rem/1 system-ui, sans-serif;
+  color: var(--dreamrec-text);
+}
+
+.dreamrec-brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.dreamrec-brand a {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  color: var(--dreamrec-text) !important;
+  text-decoration: none;
+}
+
 .dreamrec-profile-index {
   min-height: 100vh;
   background: var(--dreamrec-navy);
