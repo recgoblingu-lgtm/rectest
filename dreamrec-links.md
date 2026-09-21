@@ -670,3 +670,7 @@ https://recgoblingu-lgtm.github.io/rectest/user/zshade/events/
 https://recgoblingu-lgtm.github.io/rectest/user/zshade/photos/
 https://recgoblingu-lgtm.github.io/rectest/user/zshade/rooms/
 ```
+## Complete generated directory
+
+- https://recgoblingu-lgtm.github.io/rectest/dreamrec-links.html
+- https://recgoblingu-lgtm.github.io/rectest/dreamrec-links/
