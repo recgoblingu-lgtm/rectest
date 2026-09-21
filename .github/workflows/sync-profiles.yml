@@ -1,0 +1,48 @@
+name: Sync approved profiles
+
+on:
+  schedule:
+    # GitHub schedules are best-effort; this runs approximately every five minutes.
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Maximum approved profiles to process"
+        required: false
+        default: "100"
+
+concurrency:
+  group: approved-profile-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch approved profiles
+        env:
+          PROFILE_LIMIT: ${{ inputs.limit || '100' }}
+        run: python scripts/sync_profiles.py --limit "$PROFILE_LIMIT" --delay 1
+
+      - name: Rebuild all-links directory
+        run: python tools_rebrand.py && python tools_finalize.py
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profiles.txt profile-sync-manifest.json profile-sync-results.md user dreamrec-links.html dreamrec-links tools_rebrand.py tools_finalize.py
+          git diff --cached --quiet || git commit -m "Sync approved DreamRec profiles"
+          git push
